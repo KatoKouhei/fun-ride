@@ -27,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+
+        if (request()->isSecure()) {
+            \URL::forceScheme('https');
+        }
     }
 }
