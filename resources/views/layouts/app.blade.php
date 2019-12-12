@@ -42,7 +42,7 @@
                     <ul class="navbar-nav mr-auto">
                         <form class="form-inline ml-auto" method="POST" action="/event/search">
                             @csrf
-                            <input type="text" name="search" id="search" class="form-control mr-2" placeholder="イベント検索">
+                            <input type="text" name="keyword" id="keyword" class="form-control mr-2" placeholder="イベント検索">
                             <button class="btn btn-outline-orange font-weight-bold" type="submit">検索</button>
                         </form>
                     </ul>

@@ -331,18 +331,23 @@ class EventController extends Controller
     }
     public function search(Request $request){
         $keyword = $request->keyword;
-        $keyword = explode(' ', $keyword);
         $today = Carbon::today();
         $add_15day = $today->copy()->addDays(15);
-        $result = Event::whereDate('start_at', '>', $today);
-        foreach($keyword as $word){
-            // $result->where(function($q){
-            //     $word = $word;
-            //     $q->where('title', 'LIKE', "%{$word}%")->orwhere('subtitle', 'LIKE', "%{$word}%")->orwhere('prefecture', 'LIKE', "%{$word}%")->orwhere('description', 'LIKE', "%{$word}%")->orwhere('start_at', 'LIKE', "%{$word}%");
-            // });
+        $result = Event::whereDate('start_at', '>=', $today);
+        // dd($keyword);
+        if(isset($keyword)){
+            $keyword = explode(' ', $keyword);
+            // dd($keyword);
+            foreach($keyword as $word){
+                // dd($word);
+                    $result->where(function($q) use ($word) {
+                        // dd($word);
+                        $q->where('title', 'LIKE', "%{$word}%")->orwhere('subtitle', 'LIKE', "%{$word}%")->orwhere('prefecture', 'LIKE', "%{$word}%")->orwhere('description', 'LIKE', "%{$word}%")->orwhere('start_at', 'LIKE', "%{$word}%");
+                    });
+            }
         }
         $result = $result->get();
-        // dd($today);
+        // dd($result);
         $today = $today->toDateString();
         $add_15day = $add_15day->toDateString();
         return view('/event/search', ['result'=> $result, 'today'=> $today, 'add_15day'=> $add_15day]);
@@ -353,25 +358,30 @@ class EventController extends Controller
         $start_at_2 = $request->start_at_2;
         $distance1 = $request->distance1;
         $distance2 = $request->distance2;
-        if(empty($distance1)){
-            $distance1 = 0;
-        }
-        if(empty($distance2)){
-            $distance2 = 10000000;
-        }
         $load_type = $request->load_type;
         $level = $request->level;
         $today = Carbon::today();
         $result = Event::whereDate('start_at', '>=', $today);
         if(isset($keyword)){
             $keyword = explode(' ', $keyword);
-            foreach($keyword as $key => $word){
-                $result = $result->where('title', 'LIKE', "%{$word}%")->orwhere('subtitle', 'LIKE', "%{$word}%")->orwhere('prefecture', 'LIKE', "%{$word}%")->orwhere('description', 'LIKE', "%{$word}%");
+            // dd($keyword);
+            foreach($keyword as $word){
+                // dd($word);
+                    $result->where(function($q) use ($word) {
+                        // dd($word);
+                        $q->where('title', 'LIKE', "%{$word}%")->orwhere('subtitle', 'LIKE', "%{$word}%")->orwhere('prefecture', 'LIKE', "%{$word}%")->orwhere('description', 'LIKE', "%{$word}%");
+                    });
             }
         }
-        $result = $result->whereBetween('distance', [$distance1, $distance2]);
+        if(isset($distance1)){
+            $result = $result->where('distance', '>=', $distance1);
+        }
+        if(isset($distance2)){
+            $result = $result->where('distance', '<=', $distance2);
+        }
         if(isset($start_at_1)){
-            $result = $result->whereDate('start_at', '>=', $start_at_1);
+            $result = $result->whereDate('start_at', '>=', $start_at_1)->get();
+            // dd($start_at_1);
         }
         if(isset($start_at_2)){
             $result = $result->whereDate('start_at', '<=', $start_at_2);
@@ -386,7 +396,10 @@ class EventController extends Controller
                 $result = $result->where('level', 'LIKE' ,"%{$value}%");
             }
         }
-        $result = $result->get();
-        return view('/event/search', ['result'=> $result]);
+        $add_15day = $today->copy()->addDays(15);
+        $today = $today->toDateString();
+        // dd($today);
+        $add_15day = $add_15day->toDateString();
+        return view('/event/search', ['result'=> $result,'today'=> $today, 'add_15day'=> $add_15day]);
     }
 }

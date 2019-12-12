@@ -45,9 +45,13 @@ class CalendarController extends Controller
         }
         //カレンダーで来月の残り(今回9月分はなし)を$date配列に入れる
         $next = date('w', strtotime("last day of $month"));
-        for ($i = 1; $i <= (6 - $next); $i += 1) {
-            $dates[] = new CarbonImmutable("$month-$next + $i day");
+        $dt = new Carbon($month);
+        $dt = $dt->addMonth();
+        // dd($dt);
+        for ($i = 0; $i <= (5 - $next); $i++) {
+            $dates[] = new CarbonImmutable("$dt + $i day");
         }
+        // dd($dates);
         return $dates;
     }
  
