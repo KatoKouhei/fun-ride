@@ -73,7 +73,7 @@ class RegisterController extends Controller
         $ride_type = implode(",", $ride_type);
         $mail_preference = $data['mail_preference'];
         $mail_preference = implode(",", $mail_preference);
-        dd($data);
+        $image_path = null;
         if(isset($data['image_path'])){
             $image_path = $data['image_path'];
             $path = Storage::disk('s3')->putFile('fanride', $image_path, 'public');
