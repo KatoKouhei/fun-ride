@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/community/copi/register/{community_id}', 'CommunityController@copiRegister');
     Route::get('/community/new', 'CommunityController@new');
     Route::get('/community/popular', 'CommunityController@popular');
-    Route::get('/community/{community_id}', 'CommunityController@index');
+
 
     // addAdministrator community
     Route::get('/addAdministrator/{community_id}', 'AddAdministratorController@index');
@@ -84,14 +84,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/event/update/{event_id}', 'EventController@update');
     Route::get('/event/register', 'EventController@register');
     Route::post('/event/create', 'EventController@create');
-    Route::post('/event/search', 'EventController@search');
-    Route::post('/event/research', 'EventController@research');
     Route::get('/event/management', 'EventController@management');
     Route::get('/event/delete/{community_id}', 'EventController@delete');
     Route::get('/event/copi/register/{event_id}', 'EventController@copiRegister');
     Route::get('/event/new', 'EventController@new');
     Route::get('/event/popular', 'EventController@popular');
-    Route::get('/event/{event_id}', 'EventController@index');
+
     // Route::get('/community/markdown', 'CommunityController@markdown');
     
     
@@ -112,7 +110,16 @@ Route::get('/markdown', 'MarkdownController@markdown');
 // opinion
 Route::post('/opinion', 'OpinionController@opinion');
 
+// maill
 Route::get('/mailable', 'TaskController@sendMail');
 
+// グループ
+Route::get('/community/{community_id}', 'CommunityController@index');
+
+
+// イベント
+Route::get('/event/{event_id}', 'EventController@index');
+Route::post('/event/search', 'EventController@search');
+Route::post('/event/research', 'EventController@research');
 
 // Route::get('/test/{year}/{month}/{user_id}', 'CalendarController@show');

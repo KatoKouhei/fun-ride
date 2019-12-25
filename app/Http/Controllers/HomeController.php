@@ -81,9 +81,8 @@ class HomeController extends Controller
         // dd($recommend_community_events);
         
         // オススメイベント（同県のイベント情報）
-        $user_prefecture = config('prefecture')[$user->prefecture];
-        $recommend = Event::where('prefecture', 'LIKE' , "%{$user_prefecture}%")->whereNotIn('id', $entries_id)->get();
-        // dd($user_id);
+        $recommend = Event::where('prefecture', 'LIKE' , "%{$user->prefecture}%")->whereNotIn('id', $entries_id)->where('start_at', '>=', $dt)->get();
+        // dd($recommend);
         return view('home', ['user'=>$user, 'communities'=>$communities, 'events'=>$events, 'recommend'=>$recommend, 'recommend_follower_events'=>$recommend_follower_events, 'recommend_community_events'=>$recommend_community_events]);
     }
     public function welcome()

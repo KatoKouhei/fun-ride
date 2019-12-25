@@ -110,7 +110,9 @@
                     @endif
                     @if(isset($recommend))
                         @foreach($recommend as $event)
-                            <p class="mt-4 mb-0 p-2 border-top border-dark font-weight-bold">以下は{{config('prefectures')[$user->prefecture]}}のイベントです</p>
+                            <p>
+                                県内のイベント
+                            </p>
                             <div class="d-block col-md-12 py-3 border-top">
                                 <a href="/event/{{$event->id}}" class="text-dark">
                                     <div class="row">
