@@ -93,22 +93,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-4">
-            <div class="">
-                <div class="card">
-                    <div class="card-header">
-                        管理者
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <a href="">
-                                {{-- <h5>{{$user_name}}</h5> --}}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <button type="submit" class="btn btn-orange mt-4 w-100" name="create" value="create">
             編集完了
         </button>

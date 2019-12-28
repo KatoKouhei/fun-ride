@@ -70,7 +70,7 @@
                                 <div class="d-block mb-0">
                                     <img src="{{$community->image_path}}" alt="" class="img_management col-md-5 mt-1 mx-3">
                                     <p class="h5 py-auto mt-1 mb-0"><u>{{$community->community_title}}</u></p>
-                                    <p class="my-0">{{$community->commmunity_subtitle}}</p>
+                                    <p class="my-0">{{$community->community_subtitle}}</p>
                                 </div>
                                 <div class="d-block">
                                     <p class="font-weight-bold my-0">イベント回数：{{$community_event_num[$key]}} 回目</p>

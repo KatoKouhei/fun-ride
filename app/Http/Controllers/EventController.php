@@ -177,6 +177,8 @@ class EventController extends Controller
         if(isset($request->image_path)){
             $path = Storage::disk('s3')->putFile('fanride', $request->image_path, 'public');
             $image_path = Storage::disk('s3')->url($path);
+        }else{
+            $image_path = $request->image_path;
         }
         $description = $request->description;
         $map_url = $request->map_url;
@@ -214,8 +216,9 @@ class EventController extends Controller
             'meeting_at'=>$meeting_at,
             'capacity'=>$capacity,
         ]);
-
-        $event = Event::where('community_id', $community_id)->where('title', $title)->where('prefecture', $prefecture)->where('capacity', $capacity)->first();
+        
+        $today = Carbon::now()->toDateString();
+        $event = Event::where('community_id', $community_id)->where('title', $title)->where('prefecture', $prefecture)->where('capacity', $capacity)->whereDate('created_at', '=', $today)->first();
         $role_type = '1';
         Entry::create([
             'event_id'=>$event->id,

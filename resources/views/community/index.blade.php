@@ -46,7 +46,11 @@
                     <h2 class="d-inline-block my-0">{{$community->community_title}}</h2>
                     <div id="subscribe_button" class=" float-right clearfix">
                         @if(isset($member_user))
-                            <button class="btn btn-default border-dark float-right clearfix d-inline-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">グループを退会する</button>
+                            @if($member_user = 1)
+
+                            @else
+                                <button class="btn btn-default border-dark float-right clearfix d-inline-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">グループを退会する</button>
+                            @endif
                         @else
                             <button class="btn btn-orange border-dark float-right clearfix d-inline-block" onclick="subscribe()" name="subscribe" id="subscribe" value="subscribe">グループに入会する</button>
                         @endif

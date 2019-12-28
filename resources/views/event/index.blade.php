@@ -44,7 +44,10 @@
                     <div id="subscribe_button" class="card-footer">
                         @if($black_holder == false)
                             @if(isset($entry_user))
-                                <button class="btn btn-default border-dark float-right clearfix d-inline-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">イベントを辞退する</button>
+                                @if($entry_user->role_type == 1)
+                                @else
+                                    <button class="btn btn-default border-dark float-right clearfix d-inline-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">イベントを辞退する</button>
+                                @endif
                             @else
                                 <button class="btn btn-orange border-dark float-right clearfix d-inline-block" onclick="subscribe()" name="subscribe" id="subscribe" value="subscribe">イベントに参加する</button>
                             @endif
@@ -59,7 +62,7 @@
                         イベント概要
                     </div>
                     <div class="card-body">
-                        {{$event->descripstion}}
+                        {!!$event->description!!}
                     </div>
                 </div>
             </div>

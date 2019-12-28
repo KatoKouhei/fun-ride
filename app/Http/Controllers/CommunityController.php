@@ -58,13 +58,14 @@ class CommunityController extends Controller
     public function create(Request $request){
             $request->validate([
                 'image_path' => ['image'],
-                'community_title' => ['required', 'string', 'max:255','unique:communities' ],
+                'community_title' => ['required', 'string', 'max:255','unique:communities,deleted_at,NULL' ],
             ]);
             if(isset($request->image_path)){
                 $path = Storage::disk('s3')->putFile('fanride', $request->image_path, 'public');
                 $image_path = Storage::disk('s3')->url($path);
-            }
-            
+            }else{
+                $image_path = $request->image_path;
+            }            
             $community_title = $request->community_title;
             $community_subtitle = $request->community_subtitle;
             $community_manage = $request->community_manage;

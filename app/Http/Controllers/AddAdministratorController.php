@@ -25,11 +25,13 @@ class AddAdministratorController extends Controller
     public function create(Request $request){
         $community = Community::find($request->community_id);
         $user = User::where('name', $request->user_name)->first();
-        Member::create([
-            'community_id'=>$community->id,
-            'user_id'=>$user->id,
-            'role_type'=> 1,
-        ]);
+        if(isset($user)){
+            Member::create([
+                'community_id'=>$community->id,
+                'user_id'=>$user->id,
+                'role_type'=> 1,
+            ]);
+        }
         return redirect("addAdministrator/$community->id");
     }
     public function delete(Request $request){
@@ -57,11 +59,13 @@ class AddAdministratorController extends Controller
     public function eventCreate(Request $request){
         $event = Event::find($request->event_id);
         $user = User::where('name', $request->user_name)->first();
-        Entry::create([
-            'event_id'=>$event->id,
-            'user_id'=>$user->id,
-            'role_type'=> 1,
-        ]);
+        if(isset($user)){
+            Entry::create([
+                'event_id'=>$event->id,
+                'user_id'=>$user->id,
+                'role_type'=> 1,
+            ]);
+        }
         return redirect("addAdministrator/event/$event->id");
     }
     public function eventDelete(Request $request){

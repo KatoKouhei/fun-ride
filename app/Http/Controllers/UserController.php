@@ -120,7 +120,7 @@ class UserController extends Controller
             'image_path'=>$user->image_path,
             'mail_preference'=>$mail_preference
         ]);
-        return redirect("user/$user_id");
+        return redirect("home");
     }
 
 }

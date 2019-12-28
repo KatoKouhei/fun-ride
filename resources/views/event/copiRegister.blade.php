@@ -144,7 +144,7 @@
                                 <div class="">
                                     <div class="">
                                         <input id="map_url" type="text" class="form-control" name="map_url" autocomplete="" placeholder="URLを添付してください" value="{{$event->map_url}}">
-                                        <label for="" class="">※以下のサイトで走行ルートを作成し、URLを項目に添付してください。</label>
+                                        <label for="" class="">※以下のサイトで走行ルートを作成し、URLを添付してください。</label>
                                         <a class="text-center" href="https://www.navitime.co.jp/bicycle/" target="_blank">https://www.navitime.co.jp/bicycle/</a>
                                         @error('map_url')
                                             <span class="invalid-feedback" role="alert">
@@ -303,16 +303,7 @@
                 </div>
             </div>
 
-            {{-- 管理者登録 --}}
-            <div class="card my-4">
-                <div class="card-header px-0 pl-2">
-                    管理者
-                </div>
-                <div class="card-body text-left">
-                    {{$user->name}}
-                </div>
-            </div>
-            <button type="submit" class="btn btn-orange mt-2 w-100" name="create" value="create">
+            <button type="submit" class="btn btn-orange mt-4 w-100" name="create" value="create">
                 イベント編集完了
             </button>
             @if ($errors->any())

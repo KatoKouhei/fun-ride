@@ -31,6 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // 参加イベント
         $user_id = Auth::id();
         $user = User::find($user_id);
         $members = Member::where('user_id', $user_id)->get();

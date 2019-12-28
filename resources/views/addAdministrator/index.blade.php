@@ -17,7 +17,7 @@
                     </a>
                 </li> --}}
                 <li class="nav-item border-left">
-                    <a class="nav-link text-white" href="/community/{{$community->id}}">
+                    <a class="nav-link text-white" href="/blackList/{{$community->id}}">
                         <i class="far fa-times-circle mr-1"></i>ブラックリストを編集する
                     </a>
                 </li>

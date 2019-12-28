@@ -21,10 +21,12 @@ class BlackListController extends Controller
     public function create(Request $request){
         $community = Community::find($request->community_id);
         $user = User::where('name', $request->user_name)->first();
-        BlackList::create([
-            'community_id'=>$community->id,
-            'user_id'=>$user->id,
-        ]);
+        if(isset($user)){
+            BlackList::create([
+                'community_id'=>$community->id,
+                'user_id'=>$user->id,
+            ]);
+        }
         return redirect("blackList/$community->id");
     }
     public function delete(Request $request){

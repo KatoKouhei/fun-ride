@@ -22,10 +22,10 @@
                         <p class="mb-0">### 見出し</p>
                         <p class="mb-0">#### 見出し</p>
                         <p class="mb-0">##### 見出し</p>
-                        <p class="mb-0">---</p>
+                        <p class="mb-0">***</p>
                         <p class="mb-0">text</p>
                         <p class="mb-0">リンク</p>
-                        <p class="mb-0">「株式会社Fun-Ride」(http:www.funride)運営サイトです</p>
+                        <p class="mb-0">[Fun-Ride](http://www.ファンライド.com)運営サイトです</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -39,48 +39,7 @@
                         <hr class="my-0">
                         <p class="mb-0">text</p>
                         <p class="my-0">リンク</p>
-                        <p><a href="">株式会社Fun-Ride</a>運営サイトです。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="my-4">
-        <div class="h2 border-bottom border-orange">
-            段落・改行のやり方
-        </div>
-        <div class="h5">
-            <p class="mb-0">
-                段落は空行を1つ入れる
-            </p>
-            <p>
-                改行は文末にスペースを2つ以上いれる。
-            </p>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="text-center h5">text</p>
-                    <div class="border">
-                        <p class="mb-0">段落</p>
-                        <p class="mb-0">ああああああ</p>
-                        <br>
-                        <p class="mb-0">ああああああ</p>
-                        <br>
-                        <p class="mb-0">改行</p>
-                        <p class="mb-0">ああああああ　　</p>
-                        <p class="mb-0">ああああああ</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <p class="text-center h5">変換後</p>
-                    <div class="border">
-                        <p class="mb-0">段落</p>
-                        <p class="mb-0">ああああああ</p>
-                        <br>
-                        <p class="mb-0">ああああああ</p>
-                        <br>
-                        <p class="mb-0">改行</p>
-                        <p class="mb-0">ああああああ</p>
-                        <p class="mb-0">ああああああ</p>
+                        <p><a href="http://www.ファンライド.com">Fun-Ride</a>運営サイトです。</p>
                     </div>
                 </div>
             </div>
@@ -92,10 +51,7 @@
         </div>
         <div class="h5">
             <p class="mb-0">
-                段落は空行を1つ入れる
-            </p>
-            <p>
-                改行は文末にスペースを2つ以上いれる。
+                #の数でフォントのサイズを変更できる
             </p>
             <div class="row">
                 <div class="col-md-6">
@@ -123,34 +79,36 @@
     </div>
     <div class="my-4">
         <div class="h2 border-bottom border-orange">
-            フォントの大きさ
+            段落・改行のやり方
         </div>
         <div class="h5">
             <p class="mb-0">
-                段落は空行を1つ入れる
+                段落はスペースを1つ入れる
             </p>
             <p>
-                改行は文末にスペースを2つ以上いれる。
+                改行は改行することでできる。
             </p>
             <div class="row">
                 <div class="col-md-6">
                     <p class="text-center h5">text</p>
                     <div class="border">
-                        <p class="mb-0"># 見出し</p>
-                        <p class="mb-0">## 見出し</p>
-                        <p class="mb-0">### 見出し</p>
-                        <p class="mb-0">#### 見出し</p>
-                        <p class="mb-0">##### 見出し</p>
+                        <p class="mb-0">段落</p>
+                        <p class="mb-0">　ああああああ</p>
+                        <br>
+                        <p class="mb-0">改行</p>
+                        <p class="mb-0">ああああああ</p>
+                        <p class="mb-0">ああああああ</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <p class="text-center h5">変換後</p>
                     <div class="border">
-                        <p class="h1">見出し</p>
-                        <p class="h2">見出し</p>
-                        <p class="h3">見出し</p>
-                        <p class="h4">見出し</p>
-                        <p class="h5 mb-0 pb-0">見出し</p>
+                        <p class="mb-0">段落</p>
+                        <p class="mb-0">　ああああああ</p>
+                        <br>
+                        <p class="mb-0">改行</p>
+                        <p class="mb-0">ああああああ</p>
+                        <p class="mb-0">ああああああ</p>
                     </div>
                 </div>
             </div>
@@ -168,17 +126,17 @@
                 <div class="col-md-6">
                     <p class="text-center h5">text</p>
                     <div class="border">
-                        <p class="mb-0">ｰｰｰ</p>
+                        <p class="mb-0">aaaa</p>
                         <p class="mb-0">***</p>
-                        <p class="mb-0">___</p>
+                        <p class="mb-0">aaaa</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <p class="text-center h5">変換後</p>
                     <div class="border">
-                        <hr class="my-2">
-                        <hr class="my-2">
-                        <hr class="my-2">
+                        <p class="mb-0">aaaa</p>
+                        <hr class="my-2 ">
+                        <p class="mb-0">aaaa</p>
                     </div>
                 </div>
             </div>
@@ -197,7 +155,7 @@
                     <p class="text-center h5">text</p>
                     <div class="border">
                         <p class="mb-0">MarkDownについての参照ページを以下に記します　　</p>
-                        <p class="mb-0">「株式会社アーティス」(https://www.asobou.co.jp/blog/bussiness/markdown)</p>
+                        <p class="mb-0">[株式会社アーティス](https://www.asobou.co.jp/blog/bussiness/markdown)</p>
                     </div>
                 </div>
                 <div class="col-md-6">
