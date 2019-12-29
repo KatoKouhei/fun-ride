@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <title>USER情報｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
+</head>
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="w-75">

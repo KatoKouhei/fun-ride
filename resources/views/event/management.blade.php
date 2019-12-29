@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <title>イベント・グループ管理｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
+</head>
 <div class="container py-4">
     <div class="row">
         

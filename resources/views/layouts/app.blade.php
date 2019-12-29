@@ -7,8 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    {{-- <title>ファンライド</title> --}}
+    <meta name="description" content="誰でも簡単に大規模なファンライドから10名未満の小規模なファンライドまで開催できるファンライドイベント作成webサイトです。仲間を募り、一緒楽しみ、トレーニングして強くなろう。">
+    <meta name="keywords" content="ファンライド,funride,fun-ride,FunRide,FUNRIDE,イベント,作成,個人,チーム,募集,">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

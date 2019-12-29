@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+<head>
+    <title>編集（グループ）｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
+</head>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
     <div class="container font-weight-bold">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

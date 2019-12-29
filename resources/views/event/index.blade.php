@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <title>イベント情報｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
+</head>
 @if(isset($entry_user) && $entry_user->role_type == 1)
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
         <div class="container font-weight-bold">

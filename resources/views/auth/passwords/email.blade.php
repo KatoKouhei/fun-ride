@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <title>パスワードリセット｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
+</head>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 my-4">

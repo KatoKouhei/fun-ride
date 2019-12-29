@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+<head>
+    <title>さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
+</head>
 <section id="showcase">
     <div class="welcome_img text-white text-center">
         <h1 class="mt-4 display-4 text-shadow">ライダーを繋ぐプラットフォーム</h1>
