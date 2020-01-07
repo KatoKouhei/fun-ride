@@ -372,37 +372,39 @@ class EventController extends Controller
                 // dd($word);
                     $result->where(function($q) use ($word) {
                         // dd($word);
-                        $q->where('title', 'LIKE', "%{$word}%")->orwhere('subtitle', 'LIKE', "%{$word}%")->orwhere('prefecture', 'LIKE', "%{$word}%")->orwhere('description', 'LIKE', "%{$word}%");
+                        $q->where('title', 'LIKE', "%{$word}%")->orwhere('subtitle', 'LIKE', "%{$word}%")->orwhere('prefecture', 'LIKE', "%{$word}%")->orwhere('description', 'LIKE', "%{$word}%")->orwhere('start_at', 'LIKE', "%{$word}%");
                     });
             }
         }
         if(isset($distance1)){
-            $result = $result->where('distance', '>=', $distance1);
+            $result = $result->orwhere('distance', '>=', $distance1);
         }
         if(isset($distance2)){
-            $result = $result->where('distance', '<=', $distance2);
+            $result = $result->orwhere('distance', '<=', $distance2);
         }
         if(isset($start_at_1)){
-            $result = $result->whereDate('start_at', '>=', $start_at_1)->get();
+            $result = $result->orwhereDate('start_at', '>=', $start_at_1)->get();
             // dd($start_at_1);
         }
         if(isset($start_at_2)){
-            $result = $result->whereDate('start_at', '<=', $start_at_2);
+            $result = $result->orwhereDate('start_at', '<=', $start_at_2);
         }
         if(isset($load_type)){
             foreach($load_type as $value){
-                $result = $result->where('load_type', 'LIKE' ,"%{$value}%");
+                $result = $result->orwhere('load_type', 'LIKE' ,"%{$value}%");
             }
         }
         if(isset($level)){
             foreach($level as $value){
-                $result = $result->where('level', 'LIKE' ,"%{$value}%");
+                $result = $result->orwhere('level', 'LIKE' ,"%{$value}%");
             }
         }
+        $result = $result->get();
+        // dd($result);
         $add_15day = $today->copy()->addDays(15);
         $today = $today->toDateString();
         // dd($today);
         $add_15day = $add_15day->toDateString();
-        return view('/event/search', ['result'=> $result,'today'=> $today, 'add_15day'=> $add_15day]);
+        return view('/event/search', ['result'=>$result,'today'=>$today, 'add_15day'=>$add_15day]);
     }
 }
