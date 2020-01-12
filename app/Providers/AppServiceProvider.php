@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
         // https化
         if (config('app.env') === 'production') {
-            // \URL::forceScheme('https');
+            \URL::forceScheme('https');
         }
     }
 }
