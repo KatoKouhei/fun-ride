@@ -87,7 +87,7 @@
                                         <textarea class="form-control" name="profile" id="profile" cols="60" rows="10" placeholder="ー記入例ー
 ライド歴：4年
 マウンテンサイクリングin乗鞍：8位
-Fun-Ride店　定員"></textarea>
+Fun-Ride店　店員"></textarea>
                                     @endif
                                 </td>
                             </tr>
