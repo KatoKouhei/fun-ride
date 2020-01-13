@@ -71,8 +71,12 @@ class RegisterController extends Controller
     {
         $ride_type = $data['ride_type'];
         $ride_type = implode(",", $ride_type);
-        $mail_preference = $data['mail_preference'];
-        $mail_preference = implode(",", $mail_preference);
+        if(isset($data['mail_preference'])){
+            $mail_preference = $data['mail_preference'];
+            $mail_preference = implode(",", $mail_preference);
+        }else{
+            $mail_preference = null;
+        }
         $image_path = null;
         if(isset($data['image_path'])){
             $image_path = $data['image_path'];
