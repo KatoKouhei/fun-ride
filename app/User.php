@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use implements\Illuminate\Contracts\Auth\Authenticatable;
+
 
 class User extends Model
 {
