@@ -39,7 +39,6 @@ class SendMailCommand extends Command
     public function handle()
     {
         //
-
         // フォローしている人が参加するイベントを通知
         TaskController::followUp();
         // 参加していたイベントが中止したとき

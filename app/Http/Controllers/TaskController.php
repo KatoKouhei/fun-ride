@@ -7,16 +7,21 @@ use Carbon\Carbon;
 use App\Event;
 use App\User;
 use App\Entry;
+use App\Member;
 use App\Follow;
+use App\Community;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\SampleNotification;
+use App\Mail\FollowUp;
+use App\Mail\GroupUp;
+use App\Mail\Reminder;
+use App\Mail\Suspension;
 
 class TaskController extends Controller
 {
     // フォローしている人が参加するイベントを通知
     public static function followUp(){
         $entry_day = Carbon::yesterday();
-        $followers = Entry::whereDate('create_at', $entry_day)->get();
+        $followers = Entry::whereDate('created_at', $entry_day)->get();
         if(isset($followers)){
             foreach($followers as $follower){
                 $follower_data = User::find($follower->user_id);
@@ -45,11 +50,11 @@ class TaskController extends Controller
 
     // 参加していたイベントが中止したとき
     public static function suspension(){
-        $delete_at = Carbon::yesterday();
-        $call_events = Event::whereDate('delete_at', $delete_at)->get();
+        $deleted_at = Carbon::yesterday();
+        $call_events = Event::onlyTrashed()->whereDate('deleted_at', $deleted_at)->get();
         if(isset($call_events)){
             foreach ($call_events as $event){
-                $users_id = Entry::where('event_id', $event->id)->get();
+                $users_id = Entry::onlyTrashed()->where('event_id', $event->id)->get();
                 foreach ($users_id as $user_id){
                     $user = User::find($user_id->user_id);
                     $mail_preference = explode(',', $user->mail_preference);
@@ -96,7 +101,7 @@ class TaskController extends Controller
     // 参加グループのイベントが公開されたとき
     public static function groupUp(){
         $up_day = Carbon::yesterday();
-        $call_events = Event::whereDate('create_at', '=', $up_day)->get();
+        $call_events = Event::whereDate('created_at', '=', $up_day)->get();
         if(isset($call_events)){
             foreach($call_events as $event){
                 $users_id = Member::where('community_id', $event->community_id)->get();
