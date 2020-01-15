@@ -345,7 +345,7 @@ class EventController extends Controller
                 // dd($word);
                     $result->where(function($q) use ($word) {
                         // dd($word);
-                        $q->where('title', 'LIKE', "%$word%")->orwhere('subtitle', 'LIKE', "%$word%")->orwhere('prefecture', 'LIKE', "%$word%")->orwhere('description', 'LIKE', "%$word%")->orwhere('start_at', 'LIKE', "%$word%");
+                        $q->where('title', 'LIKE', "%$word%")->orwhere('subtitle', 'LIKE', "%$word%")->orwhere('prefecture', 'LIKE', "%$word%")->orwhere('description', 'LIKE', "%$word%");
                     });
             }
         }
