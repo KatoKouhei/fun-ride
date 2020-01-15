@@ -291,8 +291,8 @@ class EventController extends Controller
         $user_id = Auth::id();
         $user = User::find($user_id);
         $dt = Carbon::now();
-        $user->prefecture = config('prefecture')[$user->prefecture];
-        $new_events = Event::where('prefecture', 'LIKE', "%{$user->prefecture}%")->where('start_at', '>=', $dt)->get();
+        $prefecture = config('prefecture')[$user->prefecture];
+        $new_events = Event::where('prefecture', 'LIKE', "%{$prefecture}%")->where('start_at', '>=', $dt)->get();
         return view('/event/new', ['new_events'=>$new_events]);
     }
     public function popular(){
@@ -345,7 +345,7 @@ class EventController extends Controller
                 // dd($word);
                     $result->where(function($q) use ($word) {
                         // dd($word);
-                        $q->where('title', 'LIKE', "%{$word}%")->orwhere('subtitle', 'LIKE', "%{$word}%")->orwhere('prefecture', 'LIKE', "%{$word}%")->orwhere('description', 'LIKE', "%{$word}%")->orwhere('start_at', 'LIKE', "%{$word}%");
+                        $q->where('title', 'LIKE', "%$word%")->orwhere('subtitle', 'LIKE', "%$word%")->orwhere('prefecture', 'LIKE', "%$word%")->orwhere('description', 'LIKE', "%$word%")->orwhere('start_at', 'LIKE', "%$word%");
                     });
             }
         }

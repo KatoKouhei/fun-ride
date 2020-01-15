@@ -9,7 +9,7 @@
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header">
-                    新着グループ（ユーザーと同じ県内で活動してるグループ）
+                    新着グループ
                 </div>
                 <div class="card-body py-0">
                     @isset($new_communities)

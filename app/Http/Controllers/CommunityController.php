@@ -144,7 +144,7 @@ class CommunityController extends Controller
     public function new(){
         $user_id = Auth::id();
         $user = User::find($user_id);
-        $user->prefecture = config('prefecture')[$user->prefecture];
+        // $prefecture = config('prefecture')[$user->prefecture];
         $new_communities = Community::orderBy('created_at', 'desc')->get();
         return view('/community/new', ['new_communities'=>$new_communities]);
     }
