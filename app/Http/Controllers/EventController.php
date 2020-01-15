@@ -291,8 +291,7 @@ class EventController extends Controller
         $user_id = Auth::id();
         $user = User::find($user_id);
         $dt = Carbon::now();
-        $prefecture = config('prefecture')[$user->prefecture];
-        dd($prefecture);
+        $prefecture = config("prefectures.$user->prefecture");
         $new_events = Event::where('prefecture', 'LIKE', "%$prefecture%")->where('start_at', '>=', $dt)->get();
         return view('/event/new', ['new_events'=>$new_events]);
     }
