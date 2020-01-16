@@ -18,7 +18,7 @@ use App\Mail\Suspension;
 
 class TaskController extends Controller
 {
-    // フォローしている人が参加するイベントを通知
+     // フォローしている人が参加するイベントを通知
     public static function followUp(){
         $entry_day = Carbon::yesterday();
         $followers = Entry::whereDate('created_at', $entry_day)->get();
