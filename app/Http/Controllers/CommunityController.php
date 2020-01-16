@@ -33,6 +33,7 @@ class CommunityController extends Controller
         $member_num = count($member_0)+count($member_1);
         $dt = Carbon::now();
         $events = Event::where('community_id', $community_id)->where('start_at', '>=', $dt)->get();
+        $after_events = Event::where('community_id', $community_id)->where('start_at', '<', $dt)->get();
         $Parsedown = new \Parsedown();
         $community->description = $Parsedown->text($community->description);
         return view('community/index', [
@@ -42,6 +43,7 @@ class CommunityController extends Controller
              'member_user'=>$member_user, 
              'member_num'=>$member_num, 
              'events'=>$events, 
+             'after_events'=>$after_events, 
              ]);
     }
     public function register(){

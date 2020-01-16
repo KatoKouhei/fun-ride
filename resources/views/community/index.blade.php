@@ -69,6 +69,18 @@
     <div class="row">
         <div class="w-75 mt-4">
             <div class="container">
+
+                <div class="card">
+                    <div class="card-header">
+                        グループの説明
+                    </div>
+                    <div class="card-body">
+                        <div id="preview">
+                            {!! $community->description !!}
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card mb-4">
                     <div class="card-header">
                         開催イベント
@@ -94,16 +106,34 @@
                         @endif
                     </div>
                 </div>
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">
-                        グループの説明
+                        イベント履歴
                     </div>
-                    <div class="card-body">
-                        <div id="preview">
-                            {!! $community->description !!}
-                        </div>
+                    <div class="card-body pt-0">
+                        @if(isset($after_events))
+                            @foreach($after_events as $event)
+                                <div class="d-block col-md-12 py-3 border-top">
+                                    <a href="/event/{{$event->id}}" class="text-dark">
+                                        <div class="row">
+                                            <img src="{{$event->image_path}}" alt="" class="img_xs">
+                                            <div class="col-md-8 mb-0">
+                                                <p class="h5">{{$event->title}}</p>
+                                                <p class="mb-0">開催地　：　{{$event->prefecture}}</p>
+                                                <p class="font-weight-bold text-danger"><u>開催日時　：　{{$event->start_at}}</u></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        @else
+                            開催予定のあるイベントはありません
+                        @endif
                     </div>
                 </div>
+
+
+
             </div>
         </div>
         <div class="w-25 mt-4 pr-3">
