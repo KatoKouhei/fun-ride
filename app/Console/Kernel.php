@@ -33,7 +33,7 @@ class Kernel extends ConsoleKernel
         ->everyFiveMinutes()
         // ->appendOutputTo($schedule_log_path);
         // ->dailyAt('22:35')
-        ->appendOutputTo(storage_path('logs/schedule.log'));
+        ->appendOutputTo('logs/schedule.log');
     }
 
     /**
