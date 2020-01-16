@@ -30,8 +30,8 @@ class Kernel extends ConsoleKernel
 
         $schedule
         ->command('command:sendMail')
-        ->withoutOverlapping()
-        ->dailyAt('7:30');
+        // ->everyFiveMinutes();
+        ->dailyAt('3:30');
     }
 
     /**
