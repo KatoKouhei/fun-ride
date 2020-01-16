@@ -111,7 +111,7 @@ Route::get('/markdown', 'MarkdownController@markdown');
 Route::post('/opinion', 'OpinionController@opinion');
 
 // maill
-Route::get('/mailable', '\App\Console\kernel@schedule');
+Route::get('/mailable', 'TaskController@followUp');
 
 // グループ
 Route::get('/community/{community_id}', 'CommunityController@index');
