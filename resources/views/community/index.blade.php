@@ -70,7 +70,7 @@
         <div class="w-75 mt-4">
             <div class="container">
 
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header">
                         グループの説明
                     </div>
