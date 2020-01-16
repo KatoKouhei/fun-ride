@@ -46,7 +46,7 @@ class HomeController extends Controller
         $events = [];
         if(isset($entries)){
             foreach($entries as $entry){
-                $event = Event::where('id', $entry->event_id)->where('start_at', '>=', $dt)->first();
+                $event = Event::where('id', $entry->event_id)->whereDate('start_at', '>=', $dt)->first();
                 if(isset($event)){
                     $events[] = $event;
                 }

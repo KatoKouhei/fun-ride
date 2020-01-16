@@ -28,12 +28,12 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
 
-        $schedule
-        ->command('command:sendMail')
-        ->everyFiveMinutes()
-        // ->appendOutputTo($schedule_log_path);
-        // ->dailyAt('22:35')
-        ->appendOutputTo('logs/schedule.log');
+        // $schedule
+        // ->command('command:sendMail')
+        // ->everyFiveMinutes()
+        // // ->appendOutputTo($schedule_log_path);
+        // // ->dailyAt('22:35')
+        // ->appendOutputTo('logs/schedule.log');
     }
 
     /**
