@@ -88,7 +88,7 @@
                     <div class="card-body pt-0">
                         @if(isset($events))
                             @foreach($events as $event)
-                                <div class="d-block col-md-12 border-top">
+                                <div class="d-block col-md-12 py-3 border-top">
                                     <a href="/event/{{$event->id}}" class="text-dark">
                                         <div class="row">
                                             <img src="{{$event->image_path}}" alt="" class="img_xs">
