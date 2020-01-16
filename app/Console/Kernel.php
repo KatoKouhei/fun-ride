@@ -30,9 +30,9 @@ class Kernel extends ConsoleKernel
 
         $schedule
         ->command('command:sendMail')
-        ->everyFiveMinutes()
-        ->appendOutputTo($schedule_log_path);
-        // ->dailyAt('8:00');
+        // ->everyFiveMinutes();
+        // ->appendOutputTo($schedule_log_path);
+        ->dailyAt('22:10');
     }
 
     /**
