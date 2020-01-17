@@ -31,7 +31,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light header-bg shadow-sm">
             <div class="container font-weight-bold p-0">
-                <a class="navbar-brand" href="/home">
+                <a class="navbar-brand" href="/welcome">
                     <h3 class="py-auto my-auto text-orange font-weight-bold">Fun-Ride</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
