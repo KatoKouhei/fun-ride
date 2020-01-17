@@ -12,7 +12,7 @@
             <div class="row mt-4">
                 <div class="col-md-4">
                     <div class="card text-dark">
-                        <div class="card-header h5 border-bottom text-orange font-weight-bold">
+                        <div class="card-header h5 border-bottom font-weight-bold">
                             自分たちのコミュニティーを作ろう
                         </div>
                         <div class="card-body" height="1000">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card text-dark">
-                        <div class="card-header h5 border-bottom  text-orange font-weight-bold">
+                        <div class="card-header h5 border-bottom font-weight-bold">
                             イベントを開催して参加者を募ろう
                         </div>
                         <div class="card-body">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card text-dark">
-                        <div class="card-header h5 border-bottom text-orange font-weight-bold">
+                        <div class="card-header h5 border-bottom font-weight-bold">
                             フォローした人の情報をゲット
                         </div>
                         <div class="card-body">
