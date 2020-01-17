@@ -6,8 +6,8 @@
 </head>
 <section id="showcase">
     <div class="welcome_img text-white text-center">
-        <h1 class="mt-4 display-4 text-shadow">ライダーを繋ぐプラットフォーム</h1>
-        <p class="h2 text-shadow mb-4">～　簡易Fun-Ride開催サイト　～</p>
+        <h1 class="mt-4 display-4 text-shadow text-orange">ライダーを繋ぐプラットフォーム</h1>
+        <p class="h2 text-shadow mb-4 text-orange">～　簡易Fun-Ride開催サイト　～</p>
         <div class="container">
             <div class="row mt-4">
                 <div class="col-md-4">
