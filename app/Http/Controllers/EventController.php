@@ -377,27 +377,32 @@ class EventController extends Controller
             }
         }
         if(isset($distance1)){
-            $result = $result->orwhere('distance', '>=', $distance1);
+            $result = $result->where('distance', '>=', $distance1);
         }
         if(isset($distance2)){
-            $result = $result->orwhere('distance', '<=', $distance2);
+            $result = $result->where('distance', '<=', $distance2);
         }
         if(isset($start_at_1)){
-            $result = $result->orwhereDate('start_at', '>=', $start_at_1);
+            $result = $result->whereDate('start_at', '>=', $start_at_1);
             // dd($start_at_1);
+            // dd($result);
         }
         if(isset($start_at_2)){
-            $result = $result->orwhereDate('start_at', '<=', $start_at_2);
+            $result = $result->whereDate('start_at', '<=', $start_at_2);
         }
         if(isset($load_type)){
-            foreach($load_type as $value){
-                $result = $result->orwhere('load_type', 'LIKE' ,"%{$value}%");
-            }
+            $result->where(function($q) use ($load_type) {
+                foreach($load_type as $value){
+                    $q->where('load_type', 'LIKE' ,"%{$value}%");
+                }
+            });
         }
         if(isset($level)){
-            foreach($level as $value){
-                $result = $result->orwhere('level', 'LIKE' ,"%{$value}%");
-            }
+            $result->where(function($q) use ($level) {
+                foreach($level as $value){
+                    $q->where('level', 'LIKE' ,"%{$value}%");
+                }
+            });
         }
         $result = $result->get();
         // dd($result);
