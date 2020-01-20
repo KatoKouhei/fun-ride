@@ -383,7 +383,7 @@ class EventController extends Controller
             $result = $result->orwhere('distance', '<=', $distance2);
         }
         if(isset($start_at_1)){
-            $result = $result->orwhereDate('start_at', '>=', $start_at_1)->get();
+            $result = $result->orwhereDate('start_at', '>=', $start_at_1);
             // dd($start_at_1);
         }
         if(isset($start_at_2)){
