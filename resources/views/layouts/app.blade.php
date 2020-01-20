@@ -127,7 +127,7 @@
                         <div>
                             <p class="lead text-left mb-auto">Fun-Rideへのご意見をお問い合わせください</p>
                             <p class="text-center mb-auto">
-                                <textarea name="opinion" id="opinion" cols="45" rows="3" class=""></textarea>
+                                <textarea name="opinion" id="opinion" cols="45" rows="3" class="col-12"></textarea>
                             </p>
                             <p class="text-center">
                                 <button class="btn btn-default" type="submit">意見を送る</button>
