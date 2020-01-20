@@ -19,7 +19,7 @@
     </div>
 </nav>
 
-<div class="container py-4">
+<div class="container py-4" id="community-edit">
     <form method="POST" action="/community/create" enctype="multipart/form-data">
         @csrf
         <div class="card">
