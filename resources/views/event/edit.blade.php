@@ -26,7 +26,7 @@
 
 <form method="POST" action="/event/update/{{$event->id}}" enctype="multipart/form-data">
     @csrf
-    <div class="container py-4">
+    <div class="container py-4" id="event-edit">
 
             {{-- イベントの所属グループ --}}
             <div class="card">

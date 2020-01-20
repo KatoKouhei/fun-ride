@@ -92,5 +92,10 @@ main{
   font-size: xx-small;
 }
     /* user-edit end*/
+    /* event-edit */
+#event-edit{
+  font-size: xx-small;
+}
+    /* event-edit end*/
     
 }
