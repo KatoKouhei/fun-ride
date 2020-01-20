@@ -49,7 +49,7 @@
 .welcome_img{
   background: url('../image/2.jpeg') no-repeat center;
   background-size: cover;
-  height: 600px;
+  height: 750px;
   position: relative;
   z-index: 0;
   overflow: hidden;
@@ -70,7 +70,8 @@
   z-index: -1;
 }
 .welcome_png {
-  height: 150px;
+  height: 200px;
+  width: auto;
 }
 /* .carousel-control-prev-icon, .carousel-control-next-icon {
   height: 100px;
@@ -145,4 +146,11 @@
   -1px 1px 0 #000,
   1px -1px 0 #000,
   -1px -1px 0 #000;
+}
+#calendar{
+  height: auto;
+  width: auto;
+}
+.container{
+  min-width: 90%;
 }

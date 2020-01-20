@@ -4,7 +4,7 @@
 <head>
     <title>編集画面（USER）｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
-<div class="container py-4">
+<div class="container py-4" id="user-edit">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-left mb-3">
@@ -13,13 +13,13 @@
             <div class="card">
                 <div class="card-header">個人設定</div>
 
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <form method="POST" action="/user/update" enctype="multipart/form-data">
                         @csrf
                         <table class="table table-bordered">
                             <tr>
                                 <th class="pt-3">ユーザー名<strong class="text-danger">※</strong></th>
-                                <td>
+                                <td class="col-1">
                                     <div class="">
                                         <div class="">
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$user->name}}" required autocomplete="name" autofocus>

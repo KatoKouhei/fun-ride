@@ -4,7 +4,7 @@
 <head>
     <title>グループ登録｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand navbar-dark bg-dark shadow-sm">
     <div class="container font-weight-bold">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Right Side Of Navbar -->
@@ -24,17 +24,17 @@
         @csrf
         <div class="card">
             <div class="row mb-2 ml-2">
-                <div class="w-25 container">
+                <div class="col-4">
                     <div class="community-bg-border shadow-sm">
                         {{-- プレビュー画面 --}}
-                        <p class="m-0">グループ画像を設定する</p>
+                        <p class="m-0">画像設定</p>
                             <!-- imageのinputタグ -->
                         <input type="file" onChange="imagePreview(event)" name="image_path" />
                             <!-- プレビュー -->
                         <img class="col-md-5 d-block" id="image_preview" />
                     </div>
                 </div>
-                <div class="w-75 container">
+                <div class="col-8">
                     <div class="card-header">
                         <div class="form-group">
                             <input id="community_title" type="text" class="form-control mt-0 mb-0 @error('community_title') is-invalid @enderror" name="community_title" value="" required autocomplete="name" autofocus placeholder="グループ名">
@@ -54,15 +54,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="w-50 mt-4">
-                <div class="container">
+            <div class="col-6 mt-4">
+                <div class="">
                     {{-- MarkDown --}}
                     <div class="card">
                         <div class="card-header">
                             グループの説明（markdown記入）
                         </div>
                         <div class="card-body">
-                            <textarea name="description" id="description" cols="60" rows="20">@isset($description){{$description}}@endisset</textarea>
+                            <textarea name="description" id="description" class="col-12" cols="60" rows="20">@isset($description){{$description}}@endisset</textarea>
                         </div>
                         <div class="card-footer">
                             <button type="button" class="btn btn-orange" name="change" value="change" onclick="convertMarkdown()">
@@ -73,8 +73,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w-50 mt-4">
-                <div class="container">
+            <div class="col-6 mt-4">
+                <div class="">
                     <div class="card">
                         <div class="card-header">
                             グループの説明（プレビュー）

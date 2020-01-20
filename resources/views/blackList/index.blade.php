@@ -4,14 +4,17 @@
 <head>
     <title>ブラックリスト登録｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand navbar-dark bg-dark shadow-sm">
     <div class="container font-weight-bold">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item border-left">
                     <a class="nav-link text-white" href="/addAdministrator/{{$community->id}}">
-                        <i class="fas fa-user-plus"></i> 管理者を追加する
+                        <i class="fas fa-user-plus"></i> 
+                        <label for="" class="d-none d-sm-inline">
+                            管理者を追加する
+                        </label>
                     </a>
                 </li>
                 {{-- <li class="nav-item border-left">
@@ -21,12 +24,20 @@
                 </li> --}}
                 <li class="nav-item border-left">
                     <a class="nav-link text-orange" href="/community/{{$community->id}}">
-                        <i class="far fa-times-circle mr-1"></i>ブラックリスト編集を完了する
+                        <i class="far fa-times-circle mr-1"></i>
+                        <label for="" class="d-none d-sm-inline">
+                            ブラックリスト編集を完了する
+                        </label>
+                        
                     </a>
                 </li>
                 <li class="nav-item border-right border-left">
                     <a class="nav-link text-white" href="/community/edit/{{$community->id}}">
-                        <i class="far fa-edit mr-1"></i>グループを編集する
+                        <i class="far fa-edit mr-1"></i>
+                        <label for="" class="d-none d-sm-inline">
+                            グループを編集する
+                        </label>
+                        
                     </a>
                 </li>
             </ul>

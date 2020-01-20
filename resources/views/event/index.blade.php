@@ -5,7 +5,7 @@
     <title>イベント情報｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
 @if(isset($entry_user) && $entry_user->role_type == 1)
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand navbar-dark bg-dark shadow-sm">
         <div class="container font-weight-bold">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Right Side Of Navbar -->
@@ -28,8 +28,8 @@
 
 <div class="container py-4">
     <div class="row">
-        <div class="w-75">
-            <div class="container">
+        <div class="col-sm-8 mb-4">
+            <div class="">
                 <div class="card">
                     <div class="card-header">
                         <div class="row px-1">
@@ -38,11 +38,11 @@
                                 <h5 class="m-0 font-weight-bold">{{$event->start_at}}</h5>
                             </div>
                             <h3 class="ml-2 pt-3">{{$event->title}}</h3>
-                            <h5 class="ml-auto mt-3 p-2 rounded bg-secondary text-white font-weight-bold">定員：{{$entry_num}} / {{$event->capacity}}人</h5>
+                            <h5 class="ml-auto mt-3 p-2 rounded bg-secondary text-white font-weight-bold" id="capacity">定員：{{$entry_num}} / {{$event->capacity}}人</h5>
                         </div>
                     </div>
                     <div class="card-boby ">
-                    <img class="d-block mx-auto img_event" src="{{$event->image_path}}" alt="" width="" height="" style="">
+                        <img class="d-block mx-auto img_event" src="{{$event->image_path}}" alt="" width="" height="" style="">
                     </div>
                     <div id="subscribe_button" class="card-footer">
                         @if($black_holder == false)
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-25">
+        <div class="col-sm-4">
             <div class="">
                 @if(isset($community))
                     <div class="card">

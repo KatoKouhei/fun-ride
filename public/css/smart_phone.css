@@ -1,0 +1,93 @@
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+
+}
+@media screen and (max-width: 767px) { /*ウィンドウ幅が最大767pxまでの場合に適用*/
+main{
+  float: none;
+}
+#community-entry-btn{
+  float: none;
+}
+  /* welcome */
+.welcome_png{
+  height: 150px;
+}
+#welcome-title{
+  font-size: 35px;
+}
+#welcome-subtitle{
+  font-size: 30px;
+}
+.container{
+  max-width: 90%;
+}
+.welcome-card-title{
+  font-size: medium;
+}
+.welcome-col-title{
+  font-size: large;
+}
+.welcome-p{
+  font-size: small;
+}
+  /* welcome end */
+  /* home */
+  /* home end */
+  /* user_index */
+.collapse-area{
+  margin-bottom: 20px;
+}
+  /* user_index end*/
+  /* event_index */
+#capacity{
+  margin-right:;
+}
+  /* event_index end */
+  /* community */
+#community_title{
+  font-size: 18px;
+}
+#community_subtitle{
+  font-size: 15px;
+}
+  /* community end */
+}
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+  /* welcome */
+.welcome-card{
+  margin-bottom: 20px;
+}
+.welcome_img{
+  height: 1300px;
+}
+.welcome_png{
+}
+#welcome-title{
+  font-size: 20px;
+}
+#welcome-subtitle{
+  font-size: 15px;
+}
+.container{
+}
+.welcome-card-title{
+  font-size: 13px;
+}
+.welcome-col-title{
+}
+.welcome-p{
+}
+#welcome-footer-title{
+  font-size: 25px;
+}
+    /* welcome end */
+    
+    
+    /* user-edit */
+#user-edit{
+  font-size: xx-small;
+}
+    /* user-edit end*/
+    
+}

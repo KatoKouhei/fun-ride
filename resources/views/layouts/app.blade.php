@@ -23,16 +23,17 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/appStyle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/community.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/smart_phone.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css">
 </head>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light header-bg shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light header-bg shadow-sm">
             <div class="container font-weight-bold p-0">
                 <a class="navbar-brand" href="/welcome">
-                    <h3 class="py-auto my-auto text-orange font-weight-bold">Fun-Ride</h3>
+                    <h3 class="py-auto my-auto text-orange font-weight-bold mr-2">Fun-Ride</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,10 +42,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <form class="form-inline ml-auto" method="POST" action="/event/search">
+                        <form class="form-inline mr-auto" method="POST" action="/event/search">
                             @csrf
-                            <input type="text" name="keyword" id="keyword" class="form-control mr-2" placeholder="イベント検索">
-                            <button class="btn btn-outline-orange font-weight-bold" type="submit">検索</button>
+                            <div class="row">
+                                <input type="text" name="keyword" id="keyword" class="form-control mr-1" placeholder="イベント検索">
+                                <button class="btn btn-outline-orange font-weight-bold" type="submit">検索</button>
+                            </div>
                         </form>
                     </ul>
 
@@ -69,7 +72,7 @@
                                 <a class="nav-link btn btn-outline-secondary font-weight-bold" href="{{ route('login') }}">ログイン</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item mx-2">
                                     <a class="nav-link btn btn-orange font-weight-bold" href="{{ route('register') }}">新規登録</a>
                                 </li>
                             @endif
@@ -122,7 +125,7 @@
                     <form class="ml-auto" method="POST" action="/opinion">
                         @csrf
                         <div>
-                            <p class="lead text-center mb-auto">Fun-Rideへのご意見をお問い合わせください</p>
+                            <p class="lead text-left mb-auto">Fun-Rideへのご意見をお問い合わせください</p>
                             <p class="text-center mb-auto">
                                 <textarea name="opinion" id="opinion" cols="45" rows="3" class=""></textarea>
                             </p>

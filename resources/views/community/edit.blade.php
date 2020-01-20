@@ -4,14 +4,17 @@
 <head>
     <title>編集（グループ）｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand navbar-dark bg-dark shadow-sm">
     <div class="container font-weight-bold">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item border-left">
                     <a class="nav-link text-white" href="/addAdministrator/{{$community->id}}">
-                        <i class="fas fa-user-plus"></i>管理者を追加する
+                        <i class="fas fa-user-plus"></i>
+                        <label for="" class="d-none d-sm-inline">
+                            管理者を追加する
+                        </label>
                     </a>
                 </li>
                 {{-- <li class="nav-item border-left">
@@ -21,12 +24,18 @@
                 </li> --}}
                 <li class="nav-item border-left">
                     <a class="nav-link text-white" href="/blackList/{{$community->id}}">
-                        <i class="far fa-times-circle mr-1"></i>ブラックリスト
+                        <i class="far fa-times-circle mr-1"></i>
+                        <label for="" class="d-none d-sm-inline">
+                            ブラックリストを編集する
+                        </label>
                     </a>
                 </li>
                 <li class="nav-item border-right border-left">
                     <a class="nav-link text-orange" href="/community/{{$community->id}}">
-                        <i class="far fa-edit mr-1"></i>編集中
+                        <i class="far fa-edit mr-1"></i>
+                        <label for="" class="d-none d-sm-inline">
+                            グループを編集する
+                        </label>
                     </a>
                 </li>
             </ul>
@@ -39,14 +48,14 @@
         @csrf
         <div class="card">
             <div class="row mb-2 ml-2">
-                <div class="w-25">
+                <div class="col-4">
                     <div class="community-bg-border shadow-sm">
                         <input class="d-block" type="file" onChange="imagePreview(event)" name="image_path"/>
                         <img class="d-block col-md-12 img_community" id="image_preview"  src="{{$community->image_path}}"/>
                     </div>
                 </div>
-                <div class="w-75 container">
-                    <div class="card-header">
+                <div class="col-8">
+                    <div class="card-header col-12">
                         <div class="form-group">
                             <input id="community_title" type="text" class="form-control mt-0 mb-0 @error('community_title') is-invalid @enderror" name="community_title" value="{{$community->community_title}}" required autocomplete="name" autofocus placeholder="グループ名">
                             @error('community_title')
@@ -64,14 +73,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="w-50 mt-4">
-                <div class="container">
+            <div class="col-6 mt-4">
+                <div class="">
                     <div class="card">
                         <div class="card-header">
                             グループの説明（markdown記入）
                         </div>
                         <div class="card-body">
-                                <textarea name="description" id="description" cols="60" rows="20">@if(isset($description)){{$description}}@else{{{$community->description}}}@endif</textarea>
+                                <textarea name="description" id="description" class="col-md-12" cols="60" rows="20">@if(isset($description)){{$description}}@else{{{$community->description}}}@endif</textarea>
                         </div>
                         <div class="card-footer">
                             <button type="button" class="btn btn-orange" name="change" value="change" onclick="convertMarkdown()">
@@ -82,8 +91,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w-50 mt-4">
-                <div class="container">
+            <div class="col-6 mt-4">
+                <div class="">
                     <div class="card">
                         <div class="card-header">
                             グループの説明（プレビュー）

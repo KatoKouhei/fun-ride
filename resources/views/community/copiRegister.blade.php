@@ -4,7 +4,7 @@
 <head>
     <title>グループ登録｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand navbar-dark bg-dark shadow-sm">
     <div class="container font-weight-bold">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Right Side Of Navbar -->
@@ -24,13 +24,13 @@
         @csrf
         <div class="card">
             <div class="row mb-2 ml-2">
-                <div class="w-25">
+                <div class="col-4">
                     <div class="community-bg-border shadow-sm">
                         <input class="d-block" type="file" onChange="imagePreview(event)" name="image_path"/>
                         <img class="d-block col-md-12 img_community" id="image_preview"  src="{{$community->image_path}}"/>
                     </div>
                 </div>
-                <div class="w-75 container">
+                <div class="col-8">
                     <div class="card-header">
                         <div class="form-group">
                             <input id="community_title" type="text" class="form-control mt-0 mb-0 @error('community_title') is-invalid @enderror" name="community_title" value="{{$community->community_title}}" required autocomplete="name" autofocus placeholder="グループ名">
@@ -49,14 +49,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="w-50 mt-4">
-                <div class="container">
+            <div class="col-6 mt-4">
+                <div class="">
                     <div class="card">
                         <div class="card-header">
                             グループの説明（markdown記入）
                         </div>
                         <div class="card-body">
-                                <textarea name="description" id="description" cols="60" rows="20">@if(isset($description)){{$description}}@else{{{$community->description}}}@endif</textarea>
+                                <textarea name="description" id="description" class="col-12" cols="60" rows="20">@if(isset($description)){{$description}}@else{{{$community->description}}}@endif</textarea>
                         </div>
                         <div class="card-footer">
                             <button type="button" class="btn btn-orange" name="change" value="change" onclick="convertMarkdown()">
@@ -67,8 +67,8 @@
                     </div>
                 </div>
             </div>
-            <div class="w-50 mt-4">
-                <div class="container">
+            <div class="col-6 mt-4">
+                <div class="">
                     <div class="card">
                         <div class="card-header">
                             グループの説明（プレビュー）

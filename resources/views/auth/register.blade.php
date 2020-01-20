@@ -4,7 +4,7 @@
 <head>
     <title>USER登録｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
-<div class="container py-4">
+<div class="container py-4" id="user-edit">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="text-left mb-3">
@@ -12,7 +12,6 @@
             </div>
             <div class="card">
                 <div class="card-header">個人設定</div>
-
                 <div class="card-body">
                     <form method="POST" action="register" enctype="multipart/form-data">
                         @csrf

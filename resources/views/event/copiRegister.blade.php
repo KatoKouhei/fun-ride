@@ -98,14 +98,14 @@
 
             {{-- イベント概要 --}}
             <div class="row">
-                <div class="w-50 mt-4">
-                    <div class="container">
+                <div class="col-6 mt-4">
+                    <div class="">
                         <div class="card">
                             <div class="card-header">
                                 イベントの説明（markdown記入）
                             </div>
                             <div class="card-body">
-                                <textarea name="description" id="description" cols="60" rows="20">
+                                <textarea name="description" id="description" class="col-12" cols="60" rows="20">
                                     @isset($description){{$description}}@endisset
                                     {{$event->description}}
                                 </textarea>
@@ -119,8 +119,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-50 mt-4">
-                    <div class="container">
+                <div class="col-6 mt-4">
+                    <div class="">
                         <div class="card">
                             <div class="card-header">
                                 イベントの説明（プレビュー）

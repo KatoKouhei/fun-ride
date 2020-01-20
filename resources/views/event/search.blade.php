@@ -85,7 +85,7 @@
                             <div class="d-block col-md-12 py-3 border-top">
                                 <a href="/event/{{$event->id}}" class="text-dark">
                                     <div class="row">
-                                        <img src="{{$event->image_path}}" alt="" class="img-xs col-md-2">
+                                        <img src="{{$event->image_path}}" alt="" class="img_xs col-md-2">
                                         <div class="col-md-8 mb-0">
                                             <p class="h5">{{$event->title}}</p>
                                             <p class="mb-0">開催地　：　{{$event->prefecture}}</p>

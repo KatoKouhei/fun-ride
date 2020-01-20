@@ -6,8 +6,8 @@
 </head>
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="w-75">
-            <div class="container">
+        <div class="col-sm-8">
+            <div class="mb-4">
                 <div class="mb-3 border-bottom border-orange mx-1">
                     <div id="">
                         <h3 class="d-inline-block">{{$user->name}}</h3>
@@ -69,10 +69,10 @@
 
                 <div class="d-flex flex-row align-items-stretch text-center">
                     <div class="port-item p-4 bg-orange border w-50" data-toggle="collapse" data-target="#home">
-                        <span class="d-none d-sm-block font-weight-bold">参加イベント</span>
+                        <span class="d-sm-block font-weight-bold">参加イベント</span>
                     </div>
                     <div class="port-item p-4 bg-info border w-50" data-toggle="collapse" data-target="#resume">
-                        <span class="d-none d-sm-block font-weight-bold">管理イベント</span>
+                        <span class="d-sm-block font-weight-bold">管理イベント</span>
                     </div>
                 </div>
 
@@ -128,7 +128,7 @@
             </div>
             
         </div>
-        <div class="w-25">
+        <div class="col-sm-4">
             <div class="">
                 <div class="card mb-4">
                     <div class="card-header">

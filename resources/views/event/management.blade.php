@@ -36,14 +36,23 @@
                         </a>
                     </div>
                     <div class="col-4 text-center">
-                        <button class="btn btn-orange my-1 font-weight-bold border border-dark" onclick="location.href='/event/edit/{{$event->id}}'">
-                            <i class="fas fa-edit"></i>　　　　編集　　　　　
+                        <button class="btn btn-orange my-1 font-weight-bold border border-dark d-block w-100" onclick="location.href='/event/edit/{{$event->id}}'">
+                            <i class="fas fa-edit"></i>
+                            <label for="" class="management-btn m-0 d-none d-sm-inline">
+                                編集
+                            </label>
                         </button>
-                        <button class="btn btn-light border border-dark mb-1" onclick="location.href='/event/delete/{{$event->id}}'">
-                            <i class="fas fa-trash-alt"></i>　　　　削除　　　 　　
+                        <button class="btn btn-light border border-dark mb-1 d-block w-100" onclick="location.href='/event/delete/{{$event->id}}'">
+                            <i class="fas fa-trash-alt"></i>
+                            <label for="" class="management-btn m-0 d-none d-sm-inline w-100">
+                                削除
+                            </label>
                         </button>
-                        <button class="btn btn-light border border-dark mb-1" onclick="location.href='/event/copi/register/{{$event->id}}'">
-                            <i class="fas fa-copy"></i> コピーしてイベント作成
+                        <button class="btn btn-light border border-dark mb-1 d-block w-100" onclick="location.href='/event/copi/register/{{$event->id}}'">
+                            <i class="fas fa-copy"></i>
+                            <label for="" class="management-btn m-0 d-none d-sm-inline">
+                                イベント複製
+                            </label>
                         </button>
                     </div>
                 </div>
@@ -82,14 +91,23 @@
                             </a>
                         </div>
                         <div class="col-4 text-center">
-                            <button class="btn btn-orange my-1 font-weight-bold border border-dark" onclick="location.href='/community/edit/{{$community->id}}'">
-                                <i class="fas fa-edit"></i>　　　　編集　　　　　
+                            <button class="btn btn-orange my-1 font-weight-bold border border-dark d-block w-100" onclick="location.href='/community/edit/{{$community->id}}'">
+                                <i class="fas fa-edit"></i>
+                                <label for="" class="management-btn m-0 d-none d-sm-inline">
+                                    編集
+                                </label>
                             </button>
-                            <button class="btn btn-light border border-dark mb-1" onclick="location.href='/community/delete/{{$community->id}}'">
-                                <i class="fas fa-trash-alt"></i>　　　　削除　　　 　　
+                            <button class="btn btn-light border border-dark mb-1 d-block w-100" onclick="location.href='/community/delete/{{$community->id}}'">
+                                <i class="fas fa-trash-alt"></i>
+                                <label for="" class="management-btn m-0 d-none d-sm-inline">
+                                    削除
+                                </label>　　
                             </button>
-                            <button class="btn btn-light border border-dark mb-1" onclick="location.href='/community/copi/register/{{$community->id}}'">
-                                <i class="fas fa-copy"></i> コピーしてグループ作成
+                            <button class="btn btn-light border border-dark mb-1 d-block w-100" onclick="location.href='/community/copi/register/{{$community->id}}'">
+                                <i class="fas fa-copy"></i>
+                                <label for="" class="management-btn m-0 d-none d-sm-inline">
+                                    イベント複製
+                                </label>
                             </button>
                         </div>
                     </div>

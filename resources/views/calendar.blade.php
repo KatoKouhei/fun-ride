@@ -1,6 +1,5 @@
-<div class="card-body">
-    <div class="calender">
-        <form class="prev-next-form"></form>
+<div class="card">
+    <div class="calender table-responsive">
         <table class="table">
             <tr>
                 <td colspan="2">

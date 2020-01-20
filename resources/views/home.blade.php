@@ -4,9 +4,9 @@
 <head>
     <title>ホーム｜さあ、ファンライドを開催しよう！ファンライドイベント作成サイト【ファンライド】</title>
 </head>
-<div class="container">
-    <div class="row py-4">
-        <div class="col-md-8">
+<div class="container mx-auto">
+    <div class="row py-4 mx-auto">
+        <div class="col-lg-8 col-sm-6">
             <div class="border-bottom border-orange">
                 <h3 class="d-inline-block">{{$user->name}}</h3>
                 <button class="btn btn-default border-dark py-1 mx-2 d-inline-block float-right" onclick="location.href='/user/edit'">
@@ -133,9 +133,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4 col-sm-6">
             {{-- カレンダー --}}
-            <div class="card" id="calendar"></div>
+            <div class="table-responsive" id="calendar"></div>
 
             {{-- 新着、ランキング --}}
             <div class="border rounded bg-white my-4 font-weight-bold">
