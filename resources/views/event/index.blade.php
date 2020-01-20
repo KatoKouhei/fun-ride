@@ -51,6 +51,8 @@
                                 @else
                                     <button class="btn btn-default border-dark float-right clearfix d-inline-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">イベントを辞退する</button>
                                 @endif
+                            @elseif($user == null)
+                                <button class="btn btn-orange border-dark float-right clearfix d-inline-block" name="subscribe" id="subscribe" value="subscribe">参加には登録が必要です</button>
                             @else
                                 <button class="btn btn-orange border-dark float-right clearfix d-inline-block" onclick="subscribe()" name="subscribe" id="subscribe" value="subscribe">イベントに参加する</button>
                             @endif
