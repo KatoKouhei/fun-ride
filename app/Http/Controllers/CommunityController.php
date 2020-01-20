@@ -25,7 +25,7 @@ class CommunityController extends Controller
             $user_0[] = User::find($member->user_id);
         }
         $user_1 = [];
-        $member_1 = Member::where('community_id', $community_id)->where('role_type', '1')->get();
+        $member_1 = Member::where('community_id', $community_id)->where('role_type', 1)->get();
         foreach($member_1 as $member){
             $user_1[] = User::find($member->user_id);
         }
@@ -165,7 +165,7 @@ class CommunityController extends Controller
     }
     public function unsubscribe($community_id){
         $user_id = Auth::id();
-        Member::where('community_id', $community_id)->where('user_id', $user_id)->delete();
+        Member::where('community_id', $community_id)->where('user_id', $user_id)->where('role_type', 0)->delete();
         $member_num = Member::where('community_id', $community_id)->get();
         $is_none_member = false;
         if(empty($member_num)){
@@ -174,10 +174,11 @@ class CommunityController extends Controller
         return response()->json(['is_none_member'=> $is_none_member, 'community_id'=> $community_id]);
     }
     public function subscribe($community_id){
+        // role_typeを0で登録すること
         $user_id = Auth::id();
-        $user_member = Member::onlyTrashed()->where('community_id', $community_id)->where('user_id', $user_id)->first();
+        $user_member = Member::onlyTrashed()->where('community_id', $community_id)->where('user_id', $user_id)->where('role_type', 0)->first();
         if(isset($user_member)){
-            Member::onlyTrashed()->where('community_id', $community_id)->where('user_id', $user_id)->restore();
+            $user_member->restore();
         }else{
             Member::create([
                 'community_id'=>$community_id,

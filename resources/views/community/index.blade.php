@@ -58,7 +58,7 @@
                         <h2 class="d-inline-block my-0" id="community_title">{{$community->community_title}}</h2>
                         <div id="subscribe_button" class="d-md-block" id="community-entry-btn">
                             @if(isset($member_user))
-                                @if($member_user = 1)
+                                @if($member_user->role_type == 1)
                                 @else
                                     <button class="btn btn-default border-dark  d-md-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">グループを退会する</button>
                                 @endif
@@ -200,7 +200,7 @@
             //     window.location.href = "{/community/delete/community_id}";
             // }else{
                 $('#subscribe_button').html(`
-                    <button class="btn btn-orange border-dark float-right clearfix d-inline-block" onclick="subscribe()" name="subscribe" id="subscribe" value="subscribe">グループに入会する</button>
+                    <button class="btn btn-orange border-dark d-md-block" onclick="subscribe()" name="subscribe" id="subscribe" value="subscribe">グループに入会する</button>
                 `);
             // }
         })
@@ -216,7 +216,7 @@
         alert('グループに入会しました');
         // TODO:リダイレクトさせる
         $('#subscribe_button').html(`
-            <button class="btn btn-default border-dark float-right clearfix d-inline-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">グループを退会する</button>
+            <button class="btn btn-default border-dark d-md-block" onclick="unsubscribe()" name="unsubscribe" id="unsubscribe" value="unsubscribe">グループを退会する</button>
         `);
         })
         .catch((err) => console.error(err));

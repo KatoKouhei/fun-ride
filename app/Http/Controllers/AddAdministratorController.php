@@ -31,13 +31,21 @@ class AddAdministratorController extends Controller
                 'user_id'=>$user->id,
                 'role_type'=> 1,
             ]);
+            $member_0 = Member::where('user_id', $user->id)->where('role_type', 0)->first();
+            if(isset($member_0)){
+                Member::where('user_id', $user->id)->where('role_type', 0)->delete();
+            }
         }
         return redirect("addAdministrator/$community->id");
     }
     public function delete(Request $request){
         $community = Community::find($request->community_id);
         $user = User::find($request->user_id);
-        Member::where('community_id', $community->id)->where('user_id', $user->id)->delete();
+        Member::where('community_id', $community->id)->where('user_id', $user->id)->where('role_type', 1)->delete();
+        $lost_member_0 = Member::onlyTrashed()->where('community_id', $community->id)->where('user_id', $user->id)->where('role_type', 0)->first();
+        if(isset($lost_member_0)){
+            $lost_member_0 -> restore();
+        }
         $member_1 = Member::where('community_id', $community->id)->where('role_type', 1)->get();
         $addministrator_user = [];
         foreach($member_1 as $list){
