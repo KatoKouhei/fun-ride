@@ -16,7 +16,7 @@
                             自分たちのコミュニティーを作ろう
                         </div>
                         <img class="welcome_png" src="../image/welcome1.png" alt="">
-                        <div class="card-body">
+                        <div class="card-body bg-whitegray">
                             <p class="text-left m-2">
                                 グループを作製し、<strong>同じ思いを持つ仲間とのコニュニティー</strong>を作れる。
                                 グループに所属するとグループが開催するイベントが通知される
@@ -30,7 +30,7 @@
                             イベントを開催して参加者を募ろう
                         </div>
                         <img class="welcome_png" src="../image/welcome2.png" alt="">
-                        <div class="card-body">
+                        <div class="card-body bg-whitegray">
                             <p class="text-left m-2">
                                 イベントを作製するとサイト内で公開され、参加者を募集できる。
                                 <strong>グループでイベントを開催するとグループの歴史として残せる。</strong>
@@ -44,7 +44,7 @@
                             フォローした人の情報をゲット
                         </div>
                         <img class="welcome_png" src="../image/welcome3.png" alt="">
-                        <div class="card-body">
+                        <div class="card-body bg-whitegray">
                             <p class="text-left m-2">
                                 フォローするとフォローした人が参加するイベントが通知される。
                                 <strong>気になるイベントを見逃さない。</strong>

@@ -30,6 +30,9 @@
 .bg-orange{
   background-color: #FF9900;
 }
+.bg-whitegray{
+  background-color: rgba(240, 240, 240, 0.993);
+}
 
 /* welcome.blade */
 .welcome-img{
