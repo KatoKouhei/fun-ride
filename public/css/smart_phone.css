@@ -8,6 +8,9 @@ main{
 #community-entry-btn{
   float: none;
 }
+#float-none{
+  float: none !important;
+}
   /* welcome */
 .welcome_png{
   height: 150px;
