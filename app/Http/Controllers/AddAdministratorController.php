@@ -26,14 +26,23 @@ class AddAdministratorController extends Controller
         $community = Community::find($request->community_id);
         $user = User::where('name', $request->user_name)->first();
         if(isset($user)){
-            Member::create([
-                'community_id'=>$community->id,
-                'user_id'=>$user->id,
-                'role_type'=> 1,
-            ]);
-            $member_0 = Member::where('user_id', $user->id)->where('role_type', 0)->first();
-            if(isset($member_0)){
-                Member::where('user_id', $user->id)->where('role_type', 0)->delete();
+            $lost_member_1 = Member::onlyTrashed()->where('community_id', $community->id)->where('user_id', $user->id)->where('role_type', 1)->first();
+            if(isset($lost_member_1)){
+                $lost_member_1 -> restore();
+                $member_0 = Member::where('community_id', $community->id)->where('user_id', $user->id)->where('role_type', 0)->first();
+                if(isset($member_0)){
+                    Member::where('user_id', $user->id)->where('role_type', 0)->delete();
+                }
+            }else{
+                Member::create([
+                    'community_id'=>$community->id,
+                    'user_id'=>$user->id,
+                    'role_type'=> 1,
+                ]);
+                $member_0 = Member::where('community_id', $community->id)->where('user_id', $user->id)->where('role_type', 0)->first();
+                if(isset($member_0)){
+                    Member::where('user_id', $user->id)->where('role_type', 0)->delete();
+                }
             }
         }
         return redirect("addAdministrator/$community->id");
@@ -45,6 +54,12 @@ class AddAdministratorController extends Controller
         $lost_member_0 = Member::onlyTrashed()->where('community_id', $community->id)->where('user_id', $user->id)->where('role_type', 0)->first();
         if(isset($lost_member_0)){
             $lost_member_0 -> restore();
+        }else{
+            Member::create([
+                'community_id'=>$community->id,
+                'user_id'=>$user->id,
+                'role_type'=> 0,
+            ]);
         }
         $member_1 = Member::where('community_id', $community->id)->where('role_type', 1)->get();
         $addministrator_user = [];
@@ -68,18 +83,41 @@ class AddAdministratorController extends Controller
         $event = Event::find($request->event_id);
         $user = User::where('name', $request->user_name)->first();
         if(isset($user)){
-            Entry::create([
-                'event_id'=>$event->id,
-                'user_id'=>$user->id,
-                'role_type'=> 1,
-            ]);
+            $lost_entry_1 = Entry::onlyTrashed()->where('event_id', $event->id)->where('user_id', $user->id)->where('role_type', 1)->first();
+            if(isset($lost_entry_1)){
+                $lost_entry_1 -> restore();
+                $entry_0 = Entry::where('event_id', $event->id)->where('user_id', $user->id)->where('role_type', 0)->first();
+                if(isset($entry_0)){
+                    $entry_0 -> delete();
+                }
+            }else{
+                Entry::create([
+                    'event_id'=>$event->id,
+                    'user_id'=>$user->id,
+                    'role_type'=> 1,
+                ]);
+                $entry_0 = Entry::where('event_id', $event->id)->where('user_id', $user->id)->where('role_type', 0)->first();
+                if(isset($entry_0)){
+                    $entry_0 -> delete();
+                }
+            }
         }
         return redirect("addAdministrator/event/$event->id");
     }
     public function eventDelete(Request $request){
         $event = Event::find($request->event_id);
         $user = User::find($request->user_id);
-        Entry::where('event_id', $event->id)->where('user_id', $user->id)->delete();
+        Entry::where('event_id', $event->id)->where('user_id', $user->id)->where('role_type', 1)->delete();
+        $lost_entry_0 = Entry::onlyTrashed()->where('event_id', $event->id)->where('user_id', $user->id)->where('role_type', 0)->first();
+        if(isset($lost_entry_0)){
+            $lost_entry_0 -> restore();
+        }else{
+            Entry::create([
+                'event_id'=>$event->id,
+                'user_id'=>$user->id,
+                'role_type'=> 0,
+            ]);
+        }
         $Entry_1 = Entry::where('event_id', $event->id)->where('role_type', 1)->get();
         $addministrator_user = [];
         foreach($Entry_1 as $list){

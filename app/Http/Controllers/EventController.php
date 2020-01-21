@@ -308,7 +308,7 @@ class EventController extends Controller
     }
     public function unsubscribe($event_id){
         $user_id = Auth::id();
-        Entry::where('event_id', $event_id)->where('user_id', $user_id)->delete();
+        Entry::where('event_id', $event_id)->where('user_id', $user_id)->where('role_type', 0)->delete();
         $entry_num = Entry::where('event_id', $event_id)->get();
         $is_none_entry = false;
         if(empty($entry_num)){
@@ -318,7 +318,7 @@ class EventController extends Controller
     }
     public function subscribe($event_id){
         $user_id = Auth::id();
-        $user_entry = Entry::onlyTrashed()->where('event_id', $event_id)->where('user_id', $user_id)->first();
+        $user_entry = Entry::onlyTrashed()->where('event_id', $event_id)->where('user_id', $user_id)->where('role_type', 0)->first();
         $is_none_entry = false;
         if($user_entry == null){
             $is_none_entry = true;
@@ -328,7 +328,7 @@ class EventController extends Controller
                 'role_type'=>0,
                 ]);
         }else{
-            Entry::onlyTrashed()->where('event_id', $event_id)->where('user_id', $user_id)->restore();
+            $user_entry->restore();
         }
         return response()->json(['is_none_entry'=>$is_none_entry]);
     }
